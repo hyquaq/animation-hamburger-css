@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #272727;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.hamburger-box {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width: 80px;
+    height: 80px; */
+    cursor: pointer;
+    /* transition: all 0.5s ease-in-out; */
+    /* border: 3px solid #fff; */
+}
+
+.hamburger {
+    width: 50px;
+    height: 6px;
+    background: #fff;
+    border-radius: 5px;
+    /* box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2); */
+    transition: all 0.5s ease-in-out;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 6px;
+    background: #fff;
+    border-radius: 5px;
+    /* box-shadow: 0 2px 5px rgba(255, 101, 47, 0.2); */
+    transition: all 0.5s ease-in-out;
+}
+.hamburger::before {
+    transform: translateY(-16px);
+}
+.hamburger::after {
+    transform: translateY(16px);
+}
+
+.hamburger.open {
+    /* transform: translateX(-100%); */
+    background: transparent;
+    box-shadow: none;
+}
+
+.hamburger.open::before {
+    /* transform: rotate(45deg) translate(25%, 100%); */
+    /* transform: rotate(45deg) translate(50px, 0px); */
+    transform: rotate(135deg);
+    /* transform: translate(35px, -35px); */
+}
+
+.hamburger.open::after {
+    /* transform: rotate(-45deg) translate(0, -100%); */
+    /* transform: rotate(-45deg) translate(100%, 0px); */
+    transform: rotate(-135deg);
+    /* transform: translate(35px, 35px); */
+}
